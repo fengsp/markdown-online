@@ -7,11 +7,11 @@
 <script type="text/javascript">
 var $ = function(id) { return document.getElementById(id); };
 document.addEventListener('DOMContentLoaded', function() {
-    $('preview').innerHTML = markdown.toHTML($('markdown').innerHTML);
+    $('preview').innerHTML = markdown.toHTML($('markdown').innerText);
 }, false);
 </script>
 {% endblock %}
 {% block body %}
-<div id="markdown" style="display: none">{{ markdown }}</div>
+<div id="markdown" style="display: none">{{ markdown|safe }}</div>
 <div id="preview"></div>
 {% endblock %}
